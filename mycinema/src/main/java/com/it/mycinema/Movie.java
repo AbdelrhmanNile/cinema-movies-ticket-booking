@@ -1,7 +1,7 @@
 package com.it.mycinema;
 public class Movie {
-   String title ;
-   int duration ;
+   private String title ;
+   private int duration ;
 
     public Movie(String title, int duration) {
         this.title = title;
@@ -18,7 +18,7 @@ public class Movie {
 
     @Override
         public String toString() {
-        return "Movie{" + "title=" + title + '}';
+        return "{title: " + title + ", duration: " + duration + "}";
     }
     
    
