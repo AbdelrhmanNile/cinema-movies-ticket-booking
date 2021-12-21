@@ -1,3 +1,4 @@
+package com.it.mycinema;
 import java.util.ArrayList;
 
 
@@ -24,7 +25,7 @@ public class Hall {
 
     private void setParties(String[][] parties){
        for(int i=0; i < parties.length; i++){
-           for(int j=0; i < parties[i].length; j = j + 2){
+           for(int j=0; j < parties[i].length; j = j + 2){
                partiesArrayList.add(new Party(parties[i][j], parties[i][j+1]));
            }
        } 
