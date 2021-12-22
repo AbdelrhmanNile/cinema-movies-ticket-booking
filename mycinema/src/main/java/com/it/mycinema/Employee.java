@@ -64,7 +64,7 @@ public class Employee implements CanFuntion { // employee class implements the i
     public String reserveTicket(int hallIndex, int partyIndex, char section, int seatIndex) {
         // employee is NOT interacting directly with the methods defined in the other classes
         try{ // Exception handling if employee entered an out of range seat number
-                if(cinemaBranch.hall(hallIndex).party(partyIndex).countAvSeats() < 1){
+                if(emCheckAvSeats(hallIndex, partyIndex) < 1){
                 return "Not enough seats"; // if not enough seats
                 }
                 else{ // if there is enough seats, reserve
@@ -81,6 +81,11 @@ public class Employee implements CanFuntion { // employee class implements the i
     @Override // method to reclaim a taken seat in case of ticket cancellation
     public void cancelTicket(int movieIndex, int partyIndex, char section, int seatIndex) {
         cinemaBranch.hall(movieIndex).party(partyIndex).seat(section, seatIndex);
+    }
+    
+    @Override // methods returns an integer of the free seats in a party
+    public int emCheckAvSeats(int hallIndex, int partyIndex) {
+        return cinemaBranch.hall(hallIndex).party(partyIndex).countAvSeats();
     }
       
 }
