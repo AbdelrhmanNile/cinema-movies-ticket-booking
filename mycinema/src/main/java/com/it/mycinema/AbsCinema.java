@@ -1,13 +1,13 @@
 package com.it.mycinema;
 import java.util.ArrayList;
-
+// abstract class for cinema
 public abstract class AbsCinema { 
    protected String name;
    protected int numOfHalls;
    protected int numOfMovies;
    protected int numOfParties;
-   protected ArrayList<Hall> halls = new ArrayList<Hall>();
-   protected ArrayList<Movie> movies = new ArrayList<Movie>();
+   protected ArrayList<Hall> halls = new ArrayList<Hall>(); // ArrayList to hold the cinema's halls
+   protected ArrayList<Movie> movies = new ArrayList<Movie>(); // ArrayList to hold the cinema's movies
 
    abstract public void setName(String name);
    abstract public String getName();

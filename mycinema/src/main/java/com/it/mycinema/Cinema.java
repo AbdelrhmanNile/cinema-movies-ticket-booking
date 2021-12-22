@@ -1,14 +1,12 @@
 package com.it.mycinema;
-import java.util.ArrayList;
 
 public class Cinema extends AbsCinema{
-   
+   // cinema's constructor
    public Cinema(String name, int numOfHalls, int numOfMovies, int numOfParties, String[][] moviestitles){
        this.name = name;
        this.numOfHalls = numOfHalls;
        this.numOfMovies = numOfMovies;
        this.numOfParties = numOfParties;
-       System.out.println("cinema");
        generateHalls(numOfHalls);
        addMovies(moviestitles);
        assignMovieToHall();
@@ -47,31 +45,31 @@ public class Cinema extends AbsCinema{
    public int getNumOfParties() {
        return numOfParties;
    }
-   @Override
+   @Override // method to create new halls and add them to the ArrayList
    public void generateHalls(int numOfHalls){
        for(int i = 0; i < numOfHalls; i++){
            halls.add(new Hall());
        }
    }
 
-   @Override
+   @Override // method to access a specific hall inside the ArrayList
    public Hall hall(int index){
        return halls.get(index);
    }
-    @Override   
+    @Override // method that takes a two dimentional array of strings containing movies' info and creating Movie objects out of them
     protected void addMovies(String[][] m){
       for(int i=0; i < m.length; i++){
-          for(int j = 0; j < m[i].length ; j = j +2){
+          for(int j = 0; j < m[i].length ; j = j + 2){
             movies.add(new Movie(m[i][j], Integer.parseInt(m[i][j+1])));
           }
       } 
        
    }
-   @Override
+   @Override // method to access a specific Movie object from the ArrayList
    public Movie movie(int index){
        return movies.get(index);
    }
-   @Override
+   @Override // method assgines a movie for each hall
    protected void assignMovieToHall(){
        for(int i = 0; i < movies.size(); i++){
            halls.get(i).setMovie(movies.get(i));
