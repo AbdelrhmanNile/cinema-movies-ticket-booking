@@ -72,7 +72,7 @@ public class Employee implements CanFuntion { // employee class implements the i
                     new Ticket(cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString());
                     return "Done!";
                 }
-                else return "Cannot erserve seat,this seat is already taken!";
+                else return "Cannot reserve seat,this seat is already taken!";
     } catch (Exception e){
         return "ERROR: Invalid Seat Index, please mind the number of seats for the selected section";
     }
