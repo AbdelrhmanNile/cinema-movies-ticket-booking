@@ -6,7 +6,9 @@ public class App {
         Cinema c1 = new Cinema("AliBaBa", 5, 5, 6, moviestitle);
         Employee em1 = new Employee("Abdoe Wael", "abdow", "abdo@gmail.com", "12345678", c1);
 
-       System.out.println(em1.reserveTicket(4, 3, 'A', 54)); 
+       System.out.println(em1.reserveTicket(4, 3, 'A', 9));
+        
+       System.out.println(em1.reserveTicket(4, 3, 'A', 9)); 
         
          
     }

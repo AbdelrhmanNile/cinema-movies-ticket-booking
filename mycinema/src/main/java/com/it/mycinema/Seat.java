@@ -21,13 +21,13 @@ public class Seat {
     }
 
     // method reserves a seat, change taken value to true
-    public String reserve(){
+    public Boolean reserve(){
         if(this.taken == true){ // if you are tring to reserve an already taken seat
-            return "Sorry, this seat is alrerady taken";
+            return false;
         }
         else{
             this.taken = true;
-            return "";
+            return true;
         }
     }
 
