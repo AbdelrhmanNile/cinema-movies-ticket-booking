@@ -60,19 +60,19 @@ public class Cinema extends AbsCinema{
     protected void addMovies(String[][] m){
       for(int i=0; i < m.length; i++){
           for(int j = 0; j < m[i].length ; j = j + 2){
-            movies.add(new Movie(m[i][j], Integer.parseInt(m[i][j+1])));
+            moviesArrayList.add(new Movie(m[i][j], Integer.parseInt(m[i][j+1])));
           }
       } 
        
    }
    @Override // method to access a specific Movie object from the ArrayList
    public Movie movie(int index){
-       return movies.get(index);
+       return moviesArrayList.get(index);
    }
    @Override // method assgines a movie for each hall
    protected void assignMovieToHall(){
-       for(int i = 0; i < movies.size(); i++){
-           halls.get(i).setMovie(movies.get(i));
+       for(int i = 0; i < moviesArrayList.size(); i++){
+           halls.get(i).setMovie(moviesArrayList.get(i));
        }
    }
 
