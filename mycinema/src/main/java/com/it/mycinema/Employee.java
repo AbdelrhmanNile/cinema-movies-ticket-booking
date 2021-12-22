@@ -61,7 +61,7 @@ public class Employee implements CanFuntion { // employee class implements the i
     }
 
     @Override // method to reserve a ticket
-    public String ReserveTicket(int hallIndex, int partyIndex, char section, int seatIndex) {
+    public String reserveTicket(int hallIndex, int partyIndex, char section, int seatIndex) {
         // employee is NOT interacting directly with the methods defined in the other classes
         try{ // Exception handling if employee entered an out of range seat number
                 if(cinemaBranch.hall(hallIndex).party(partyIndex).countAvSeats() < 1){
@@ -79,7 +79,7 @@ public class Employee implements CanFuntion { // employee class implements the i
     }
 
     @Override // method to reclaim a taken seat in case of ticket cancellation
-    public void CancelTicket(int movieIndex, int partyIndex, char section, int seatIndex) {
+    public void cancelTicket(int movieIndex, int partyIndex, char section, int seatIndex) {
         cinemaBranch.hall(movieIndex).party(partyIndex).seat(section, seatIndex);
     }
       
