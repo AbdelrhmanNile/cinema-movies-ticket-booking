@@ -48,15 +48,15 @@ public class Party {
     public int countAvSeats(){
         int freeSeats = 0;
         for(int i = 0; i < 10 ; i++){
-            if(secA.get(i).state() == false){
+            if(secA.get(i).state() == true){
                 freeSeats = freeSeats + 1;
             }
-            if(secC.get(i).state() == false){
+            if(secC.get(i).state() == true){
                 freeSeats = freeSeats + 1;
             }
         }
         for(int j = 0; j < 30; j++){
-            if(secB.get(j).state() == false){
+            if(secB.get(j).state() == true){
                 freeSeats = freeSeats + 1;
             }
         }

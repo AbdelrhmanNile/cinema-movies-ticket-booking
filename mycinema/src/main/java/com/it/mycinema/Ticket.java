@@ -19,6 +19,6 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket id: " + id + "\nMovie: " + movieName + "\nParty: " + party + "\nSeat: " + seat;
+        return  "==========\n" + "Ticket id: " + id + "\nMovie: " + movieName + "\nParty: " + party + "\nSeat: " + seat+ "\n==========";
     }
 }

@@ -67,12 +67,17 @@ public class Employee implements CanFuntion { // employee class implements the i
                 if(emCheckAvSeats(hallIndex, partyIndex) < 1){
                 return "Not enough seats"; // if not enough seats
                 }
-                else if(cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).reserve() == true){
+                else if(cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).state() == true){ //taken or not
+                    cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).reserve();
                     // creating a Ticket object after reserving a seat
                     new Ticket(cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString());
                     return "Done!";
                 }
-                else return "Cannot reserve seat,this seat is already taken!";
+                else {
+                    try{
+                    throw new ArithmeticException("you are trying to reserve an already reserved seat.");
+                    } catch(Exception eee) {return "Cannot reserve seat, this seat is already taken!";}
+                }
     } catch (Exception e){
         return "ERROR: Invalid Seat Index, please mind the number of seats for the selected section";
     }

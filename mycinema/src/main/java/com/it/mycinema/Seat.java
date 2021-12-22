@@ -2,37 +2,37 @@ package com.it.mycinema;
 public class Seat {
     private char section;
     private int index;
-    private Boolean taken;
+    private Boolean free;
 
     public Seat(char section, int index){ // contructor
         this.section = section;
         this.index = index;
-        this.taken = false;
+        this.free = true;
          
     }
 
-    // method to check the state of a seat, taken or not
+    // method to check the state of a seat, free or not
     public Boolean state(){
-        if (this.taken == false){
-            return false;
+        if (this.free == true){
+            return true;
         }
         else
-            return true;
-    }
-
-    // method reserves a seat, change taken value to true
-    public Boolean reserve(){
-        if(this.taken == true){ // if you are tring to reserve an already taken seat
             return false;
-        }
-        else{
-            this.taken = true;
-            return true;
-        }
     }
 
-    public void reclaim(){ // frees a taken seat
-        this.taken = false;
+    // method reserves a seat, change free value to true
+    public void reserve(){
+            if(this.state() == true){
+                this.free = false;
+            }
+            else{
+                throw new ArithmeticException("Cannot reserve seat, this seat is already taken!");
+            }
+        }
+    
+
+    public void reclaim(){ // frees a free seat
+        this.free = true;
     }
     
 

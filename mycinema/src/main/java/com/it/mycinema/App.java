@@ -9,6 +9,7 @@ public class App {
        System.out.println(em1.reserveTicket(4, 3, 'A', 9));
         
        System.out.println(em1.reserveTicket(4, 3, 'A', 9)); 
+       //c1.hall(4).party(3).seat('A', 9).reserve();
         
          
     }
