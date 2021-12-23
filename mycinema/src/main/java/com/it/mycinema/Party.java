@@ -40,8 +40,12 @@ public class Party {
        else if (section == 'B' || section == 'b'){
            return secB.get(chair);
        }
-       else
+       else if(section == 'C' || section == 'c'){
             return secC.get(chair);
+       }
+       else {
+            throw new ArithmeticException("Error: Invalid section.");
+       }
     }
 
     // method returns an integer of the free seats
