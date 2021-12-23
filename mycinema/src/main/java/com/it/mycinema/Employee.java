@@ -3,27 +3,27 @@ package com.it.mycinema;
 
 public class Employee implements CanFuntion { // employee class implements the interface "CanFunction"
     
-    private String ename;
+    private String name;
     private String username;
     private String email;
     private String password;
     private Cinema cinemaBranch;
 
     // employee's constructor
-    public Employee(String ename, String username, String email, String password, Cinema cinemaBranch){
-        this.ename = ename;
+    public Employee(String name, String username, String email, String password, Cinema cinemaBranch){
+        this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
         this.cinemaBranch = cinemaBranch;
     }
     
-    public void setName(String ename) {
-       this.ename = ename;
+    public void setName(String name) {
+       this.name = name;
     }
     
      public String getName() {
-       return ename;
+       return name;
    }
      
    public void setUsername(String username) {
@@ -84,8 +84,9 @@ public class Employee implements CanFuntion { // employee class implements the i
     }
 
     @Override // method to reclaim a taken seat in case of ticket cancellation
-    public void cancelTicket(int movieIndex, int partyIndex, char section, int seatIndex) {
+    public String cancelTicket(int movieIndex, int partyIndex, char section, int seatIndex) {
         cinemaBranch.hall(movieIndex).party(partyIndex).seat(section, seatIndex);
+        return "Seat reclaimed.";
     }
     
     @Override // methods returns an integer of the free seats in a party

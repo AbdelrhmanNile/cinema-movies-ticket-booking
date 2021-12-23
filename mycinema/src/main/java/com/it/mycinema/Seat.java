@@ -35,7 +35,7 @@ public class Seat {
         this.free = true;
     }
     
-
+    @Override
     public String toString(){
         return "{" + section + index + "}";
     }

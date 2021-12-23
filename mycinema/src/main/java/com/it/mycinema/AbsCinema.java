@@ -18,7 +18,7 @@ public abstract class AbsCinema {
    abstract public void setNumOfParties(int numOfParties);
    abstract public int getNumOfParties();
    abstract public Hall hall(int index);
-   abstract public void generateHalls(int numOfHalls);
+   abstract protected void generateHalls(int numOfHalls);
    abstract protected void addMovies(String[][] movieslist);
    abstract protected void assignMovieToHall();
    abstract public Movie movie(int index);

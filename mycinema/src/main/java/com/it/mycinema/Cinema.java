@@ -46,7 +46,7 @@ public class Cinema extends AbsCinema{
        return numOfParties;
    }
    @Override // method to create new halls and add them to the ArrayList
-   public void generateHalls(int numOfHalls){
+   protected void generateHalls(int numOfHalls){
        for(int i = 0; i < numOfHalls; i++){
            halls.add(new Hall());
        }

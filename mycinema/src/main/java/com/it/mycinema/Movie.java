@@ -17,7 +17,7 @@ public class Movie {
     }
 
     @Override
-        public String toString() {
+    public String toString() {
         return "{" + title + ", duration: " + duration + "minutes }";
     }
     

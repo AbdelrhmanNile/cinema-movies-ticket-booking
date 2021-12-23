@@ -67,7 +67,7 @@ public class Party {
         return freeSeats;
     }
 
-
+    @Override
     public String toString(){
         return "{from: " + from + ", to: " + to + "}";
     }

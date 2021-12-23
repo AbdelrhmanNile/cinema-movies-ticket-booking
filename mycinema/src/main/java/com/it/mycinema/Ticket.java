@@ -1,15 +1,15 @@
 package com.it.mycinema;
 
 public class Ticket {
-    private static int init = 0;
+    private static int numOfTickets = 0;
     private int id;
     private String movieName;
     private String party;
     private String seat;
 
     public Ticket(String movieName, String party, String seat){ // consructor
-        this.id = init + 1;
-        init++;
+        this.id = numOfTickets + 1;
+        numOfTickets++;
         this.movieName = movieName;
         this.party = party;
         this.seat = seat;
