@@ -52,7 +52,7 @@ public class Employee implements CanFuntion { // employee class implements the i
 
     @Override // method to validate login info
     public Boolean login(String usrname, String passwd) {
-       if (this.username == usrname && this.password == passwd){
+       if ((this.username == usrname || this.email == usrname) && this.password == passwd){
            return true;
        }
        else{
@@ -70,7 +70,7 @@ public class Employee implements CanFuntion { // employee class implements the i
                 else if(cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).state() == true){ //free or not
                     cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).reserve();
                     // creating a Ticket object after reserving a seat
-                    new Ticket(cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString());
+                    new Ticket(cinemaBranch.getName(), cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString(), this.getName());
                     return "Done!";
                 }
                 else {
@@ -78,9 +78,9 @@ public class Employee implements CanFuntion { // employee class implements the i
                     throw new ArithmeticException("you are trying to reserve an already reserved seat.");
                     } catch(Exception eee) {return "Cannot reserve seat, this seat is already taken!";}
                 }
-    } catch (Exception e){
-        return "ERROR: Invalid Seat Index, please mind the number of seats for the selected section";
-    }
+        } catch (Exception e){
+            return "ERROR: Invalid Seat Index, please mind the number of seats for the selected section";
+        }
     }
 
     @Override // method to reclaim a taken seat in case of ticket cancellation
