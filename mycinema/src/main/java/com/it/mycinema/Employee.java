@@ -7,15 +7,15 @@ public class Employee implements CanFuntion { // employee class implements the i
     private String username;
     private String email;
     private String password;
-    private Cinema cinemaBranch;
+    private Cinema cinemaBranch = App.c1;
 
     // employee's constructor
-    public Employee(String name, String username, String email, String password, Cinema cinemaBranch){
+    public Employee(String name, String username, String email, String password){
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.cinemaBranch = cinemaBranch;
+        
     }
     
     public void setName(String name) {
@@ -70,8 +70,7 @@ public class Employee implements CanFuntion { // employee class implements the i
                 else if(cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).state() == true){ //free or not
                     cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).reserve();
                     // creating a Ticket object after reserving a seat
-                    new Ticket(cinemaBranch.getName(), cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString(), this.getName());
-                    return "Done!";
+                   return new Ticket(cinemaBranch.getName(), cinemaBranch.hall(hallIndex).getMovie().toString(), cinemaBranch.hall(hallIndex).party(partyIndex).toString(), cinemaBranch.hall(hallIndex).party(partyIndex).seat(section, seatIndex).toString(), this.getName()).toString();
                 }
                 else {
                     try{

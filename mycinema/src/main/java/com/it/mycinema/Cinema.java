@@ -76,4 +76,13 @@ public class Cinema extends AbsCinema{
        }
    }
 
+   public String[] getMovies(){
+       String [] mvtitles = new String[5];
+       for(int i = 0; i < moviesArrayList.size() ; i++){
+           mvtitles[i] = moviesArrayList.get(i).getTitle();
+       }
+       return mvtitles;
+   }
+
+
 }

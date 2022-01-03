@@ -30,6 +30,14 @@ public class Hall {
     public Party party(int index){
         return partiesArrayList.get(index);
     }
+
+    public String[] getParties(){
+        String[] prts = new String[5];
+        for(int i = 0; i < partiesArrayList.size(); i++){
+            prts[i] = partiesArrayList.get(i).toString();
+        }
+        return prts;
+    }
    }
 
 

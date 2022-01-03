@@ -7,7 +7,7 @@ public abstract class AbsCinema {
    protected int numOfMovies;
    protected int numOfParties;
    protected ArrayList<Hall> halls = new ArrayList<Hall>(); // ArrayList to hold the cinema's halls
-   protected ArrayList<Movie> moviesArrayList = new ArrayList<Movie>(); // ArrayList to hold the cinema's movies
+   public ArrayList<Movie> moviesArrayList = new ArrayList<Movie>(); // ArrayList to hold the cinema's movies
 
    abstract public void setName(String name);
    abstract public String getName();

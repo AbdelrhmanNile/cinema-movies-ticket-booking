@@ -69,6 +69,6 @@ public class Party {
 
     @Override
     public String toString(){
-        return "{from: " + from + ", to: " + to + "}";
+        return from + " to " + to;
     }
 }
