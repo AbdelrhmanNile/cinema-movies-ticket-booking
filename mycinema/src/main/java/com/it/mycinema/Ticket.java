@@ -20,7 +20,6 @@ public class Ticket {
         this.party = party;
         this.seat = seat;
         this.employeeName = employeeName;
-        /// #### note for fady: replacing the output to consol with output to gui ### 
         System.out.println(toString()); // prints the ticket details to the screen upon creation of that ticket
     }
 

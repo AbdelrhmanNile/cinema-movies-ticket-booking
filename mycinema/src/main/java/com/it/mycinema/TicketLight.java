@@ -47,6 +47,7 @@ public class TicketLight extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Ticket");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(200, 204, 212));

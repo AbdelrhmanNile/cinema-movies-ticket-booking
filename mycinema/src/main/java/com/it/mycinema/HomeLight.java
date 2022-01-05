@@ -67,6 +67,8 @@ public class HomeLight extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Home");
+        setLocation(new java.awt.Point(100, 200));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(200, 204, 212));
